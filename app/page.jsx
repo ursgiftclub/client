@@ -3,6 +3,8 @@ import FeaturedCategories from "@/components/home/FeaturedCategories";
 import BestSellers from "@/components/home/BestSellers";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import NewsletterSection from "@/components/home/NewsletterSection";
+import axiosInstance from "@/lib/axios"
+
 
 export const metadata = {
   title: "Urs Gift Club - Premium Gifts for Every Occasion",
