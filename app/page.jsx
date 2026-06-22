@@ -4,6 +4,7 @@ import BestSellers from "@/components/home/BestSellers";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import NewsletterSection from "@/components/home/NewsletterSection";
 
+
 export const metadata = {
   title: "Urs Gift Club - Premium Gifts for Every Occasion",
   description:
@@ -16,6 +17,7 @@ export const metadata = {
       "Discover luxury gifts and personalized options at Urs Gift Club",
   },
 };
+
 
 export default function Home() {
   return (
