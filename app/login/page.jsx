@@ -98,6 +98,8 @@ export default function AuthPage() {
           password: formData.password,
         });
 
+        localStorage.setItem("token", data.token);
+
         dispatch(register(data.user));
 
         const cartData = await loadCart(true);
@@ -117,6 +119,8 @@ export default function AuthPage() {
         });
 
         dispatch(login(data.user));
+
+        localStorage.setItem("token", data.token);
 
         await mergeGuestCart();
 

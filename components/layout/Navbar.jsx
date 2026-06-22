@@ -38,24 +38,18 @@ export default function Navbar() {
     dispatch(closeMobileMenu());
   };
 
-  const handleLogout = async () => {
-    try {
-      const { data } = await axiosInstance.post("/auth/logout");
+  const handleLogout = () => {
+    localStorage.removeItem("token");
 
-      if (data.success) {
-        toast.success(data.message);
+    dispatch(logout());
 
-        dispatch(logout());
+    dispatch(clearCart());
 
-        dispatch(clearCart());
+    closeMenu();
 
-        closeMenu();
+    toast.success("Logged out successfully");
 
-        router.push("/");
-      }
-    } catch (error) {
-      toast.error(error.response?.data?.message || "Something Went Wrong");
-    }
+    router.push("/");
   };
 
   return (
