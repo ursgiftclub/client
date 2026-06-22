@@ -5,8 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import axiosInstance from "@/lib/axios"
-
 
 import "swiper/css";
 
@@ -14,16 +12,6 @@ export default function HeroSlider() {
   const swiperRef = useRef(null);
 
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const testAuth = async () => {
-    try {
-      const { data } = await axiosInstance.get("/auth/me");
-
-      alert(JSON.stringify(data));
-    } catch (error) {
-      alert(JSON.stringify(error.response?.data || error.message));
-    }
-  };
 
   const slides = [
     {
@@ -124,8 +112,6 @@ export default function HeroSlider() {
           );
         })}
       </div>
-            <button onClick={testAuth}>Test Auth</button>
-
     </section>
   );
 }
