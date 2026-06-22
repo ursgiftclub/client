@@ -3,7 +3,6 @@ import FeaturedCategories from "@/components/home/FeaturedCategories";
 import BestSellers from "@/components/home/BestSellers";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import NewsletterSection from "@/components/home/NewsletterSection";
-import axiosInstance from "@/lib/axios"
 
 
 export const metadata = {
@@ -21,25 +20,8 @@ export const metadata = {
 
 
 export default function Home() {
-  const testAuth = async () => {
-  try {
-    const { data } = await axiosInstance.get("/auth/me");
-
-    alert(JSON.stringify(data));
-  } catch (error) {
-    alert(
-      JSON.stringify(
-        error.response?.data || error.message
-      )
-    );
-  }
-};
   return (
     <main>
-      <button onClick={testAuth}>
-  Test Auth
-</button>
-
       <HeroSlider />
       <FeaturedCategories />
       <BestSellers />
